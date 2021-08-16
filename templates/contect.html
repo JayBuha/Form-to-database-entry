@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} Contect {% endblock title %}
+
+{% block body %}
+
+<img src="https://source.unsplash.com/WLUHO9A_xik/1900x500" class='my-2'>
+
+
+<div class='container'>
+  <h1>Do Register Your Self For Use This Site</h1>
+</div>
+
+
+<div class='container'>
+  <form action="/contect/" method="POST" class="p-5 border rounded-3 bg-light">
+                    {% csrf_token %}
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="firstName" placeholder="First name" name="F_name" required>
+                    <label for="firstName">First name</label>
+                    <div class="invalid-feedback">
+                      Valid first name is required.
+                    </div>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="lastName" placeholder="last name" name="L_name" required>
+                    <label for="lastName">last name</label>
+                    <div class="invalid-feedback">
+                      Valid first name is required.
+                    </div>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="Email" required>
+                    <label for="floatingInput">Email address</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required>
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                  <div class="checkbox mb-3">
+                    <label>
+                      <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                  </div>
+                  <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+                  <hr class="my-4">
+                  <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+                </form> 
+</div>
+
+{% endblock body %}
